@@ -11,11 +11,9 @@ import java.util.Stack;
 public class ValidEnclosure {
 
     public static void main(String args[]){
-
         String input = "{[test]}";
         Stack<Character> stack = new Stack<Character>();
         System.out.println("isValid-->"+isValidEnclosure(input, stack));
-
     }
 
     private static boolean isValidEnclosure(String input, Stack<Character> stack) {
@@ -28,7 +26,6 @@ public class ValidEnclosure {
             }
 
             if(isValidEndChar(currentChar)){
-
                 if(stack.isEmpty()){
                     return false;
                 }
@@ -39,7 +36,6 @@ public class ValidEnclosure {
                 }
             }
         }
-
         return stack.isEmpty();
     }
 
@@ -54,14 +50,10 @@ public class ValidEnclosure {
     }
 
     private static boolean isValidEndChar(char currentChar) {
-
         return currentChar == '}' || currentChar == ')';
-
     }
 
     private static boolean isValidStartingChar(char currentChar) {
-
         return currentChar == '{' || currentChar == '(';
-
     }
 }

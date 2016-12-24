@@ -41,16 +41,14 @@ public class InvertBinaryTree {
         r1.right = r3;
 
         System.out.print("Original->");
-        print(parent);
+        printBFS(parent);
         System.out.println("");
         System.out.print("Reversed->");
-        print(reverseTree(parent));
+        printBFS(reverseTree(parent));
     }
 
-
-    public static void print(TreeNode tree)
+    public static void printBFS(TreeNode tree)
     {
-
         Queue<TreeNode> nodes = new LinkedList<TreeNode>();
 
         nodes.add(tree);
@@ -59,7 +57,7 @@ public class InvertBinaryTree {
 
             TreeNode current = nodes.poll();
 
-            System.out.print(current.name);
+            System.out.print(current.name + " ");
 
             if(current.left != null){
                 nodes.add(current.left);
@@ -70,10 +68,8 @@ public class InvertBinaryTree {
         }
     }
 
-
     public static TreeNode reverseTree(TreeNode tree)
     {
-
         if(tree == null)
             return tree;
 

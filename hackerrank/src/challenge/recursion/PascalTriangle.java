@@ -16,54 +16,41 @@ public class PascalTriangle {
 
         int level = 6;
 
-        int[][] array = new int[level][];
-
-
-        for(int i=0; i<level; i++){
-
-            array[i] = new int[i+1];
-
-            array[i][0] = 1;
-            array[i][i] = 1;
-
-            for(int j=1; j <i; j++){
-
-                array[i][j] = array[i-1][j-1] + array[i-1][j];
-
-            }
-        }
-
-
-
-        for(int i=0; i < level; i++){
-
-            for(int j=0; j< array[i].length; j++){
-
-                System.out.print("  "+array[i][j]);
-            }
-            System.out.println("");
-
-        }
-
+        printPascal(level);
         System.out.println("");
         System.out.println("");
-        System.out.println("");
-
-        //pascalUsingFormula(level);
-
-
+        pascalUsingFormula(level);
     }
 
 
     public static void pascalUsingFormula(int rows){
-
         for(int i =0;i<rows;i++) {
             int number = 1;
+            System.out.format("%"+(rows-i)*2+"s","");
             for(int j=0;j<=i;j++) {
                 System.out.format("%4d",number);
                 number = number * (i - j) / (j + 1);
             }
             System.out.println();
+        }
+    }
+
+    public static void printPascal(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(pascal(i, j) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int pascal(int i, int j) {
+        if (j == 0) {
+            return 1;
+        } else if (j == i) {
+            return 1;
+        } else {
+            return pascal(i - 1, j - 1) + pascal(i - 1, j);
         }
     }
 }
