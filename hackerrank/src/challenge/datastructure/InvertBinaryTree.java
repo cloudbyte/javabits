@@ -89,7 +89,6 @@ public class InvertBinaryTree {
 
         return tree;
     }
-
 }
 
 class TreeNode{

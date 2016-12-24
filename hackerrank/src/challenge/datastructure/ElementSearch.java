@@ -1,12 +1,10 @@
 package challenge.datastructure;
 
-import java.net.BindException;
 
 /**
  * Created by Raj on 8/23/16.
  */
 public class ElementSearch {
-
 
     public static void main(String args[]){
 
@@ -17,7 +15,6 @@ public class ElementSearch {
 
         System.out.println(hasValue(root, "R1"));
     }
-
 
     public static boolean hasValue(BinaryNode node, String value){
 
@@ -31,13 +28,7 @@ public class ElementSearch {
 
         return hasValue(node.left, value) || hasValue(node.right, value);
     }
-
-
-
-
-
 }
-
 
 class BinaryNode{
 
@@ -51,9 +42,5 @@ class BinaryNode{
         this.value = value;
         this.left = left;
         this.right = right;
-
     }
-
-
-
 }

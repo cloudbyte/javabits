@@ -12,7 +12,7 @@ public class ValidEnclosure {
 
     public static void main(String args[]){
 
-        String input = "{(test}";
+        String input = "{[test]}";
         Stack<Character> stack = new Stack<Character>();
         System.out.println("isValid-->"+isValidEnclosure(input, stack));
 
