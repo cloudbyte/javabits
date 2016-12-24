@@ -5,6 +5,7 @@ package challenge.datastructure;
  */
 public final class InnerClass {
 
+    private boolean flag = true;
 
     class Inner{
         void test(){
@@ -12,23 +13,17 @@ public final class InnerClass {
                 sample();
             }
         }
-
     }
-
-    private boolean flag = true;
-
 
     public void sample(){
         System.out.println("Sample");
     }
 
     public InnerClass(){
-
         (new Inner()).test();
     }
 
     public static void main(String args[]){
         new InnerClass();
     }
-
 }
